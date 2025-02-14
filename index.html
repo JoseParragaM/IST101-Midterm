@@ -75,7 +75,7 @@
 
   <script src="script.js"></script>
   <script>
-    fetch('https://checkip.amazonaws.com/')
+    fetch('http://169.254.169.254/latest/meta-data/public-ipv4')
         .then(response => response.text())
         .then(ip => {document.getElementById('public-ip').textContent = ip;})
         .catch(error => {document.getElementById('public-ip').textContent = 'Error retrieving Public IP EC2 Instance';});
