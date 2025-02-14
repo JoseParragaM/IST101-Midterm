@@ -76,8 +76,8 @@
   <script src="script.js"></script>
   <script>
     fetch('https://api64.ipify.org?format=json')
-        .then(response => response.text())
-        .then(ip => {document.getElementById('public-ip').textContent = ip;})
+        .then(response => response.json())
+        .then(data => {document.getElementById('public-ip').textContent = data.ip;})
         .catch(error => {document.getElementById('public-ip').textContent = 'Error retrieving Public IP EC2 Instance';});
 </script>
 </body>
